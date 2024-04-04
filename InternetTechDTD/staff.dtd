@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT staff (person+)>
+<!ELEMENT person (contact*, employee+)>
+<!ATTLIST person
+    name CDATA #REQUIRED>
+<!ELEMENT employee (position, department)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT contact (dept?)>
+<!ATTLIST contact
+    phonenum CDATA #IMPLIED
+    localnum CDATA #IMPLIED
+    address CDATA #IMPLIED>
+<!ELEMENT dept (#PCDATA)>

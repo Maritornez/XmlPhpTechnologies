@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Определение элемента staff -->
+    <xs:element name="staff">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="person" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Определение элемента person -->
+    <xs:element name="person">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contact" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="employee" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Определение элемента employee -->
+    <xs:element name="employee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="position" type="xs:string"/>
+                <xs:element name="department" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Определение элемента contact -->
+    <xs:element name="contact">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dept" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="phonenum" type="xs:string" use="optional"/>
+            <xs:attribute name="localnum" type="xs:string" use="optional"/>
+            <xs:attribute name="address" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Определение элемента dept -->
+    <xs:element name="dept" type="xs:string"/>
+
+</xs:schema>
